@@ -1,0 +1,21 @@
+<section class="container continer-responsive">
+	
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h1>Zip File Uploader</h1>
+				<div align="right"><%= link_to "Add Cyborgs", cyborgs_path, :class => "btn  btn-success" %></div>
+			</div><br>
+			<div class="panel">
+				    <table class="table">
+						<% @uploadzipfiles.each do |uploadzipfile| %>
+							<tr>
+							<td class="panel-hover"><a href="<%= uploadzipfile_path(uploadzipfile) %>"><%= uploadzipfile.zipfile_identifier.to_s %></a>
+							</td>
+							</tr>
+							<% end %>
+					</table>
+			</div>
+			<div><%= link_to "Upload Zip", new_uploadzipfile_path, :class => "btn btn-success" %></div>
+		</div>
+      
+</section>

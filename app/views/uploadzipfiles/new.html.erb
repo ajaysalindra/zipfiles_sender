@@ -1,0 +1,30 @@
+<section class="container continer-responsive">
+<div class="form-horizontal" >
+	<div class="panel-heading">
+      <h1>Upload Zip</h1>
+    </div>
+	<%= form_for @uploadzipfile, :html => {:multipart => true} do |f| %>
+		<div>
+			<p>
+			  <%= f.label :name, "Name : " %>
+			  <%= f.text_field :name %>
+			</p>
+		</div>
+		
+		<div>
+			<p>
+				<%= f.label :zipfile, "Zip File : " %>
+				<%= f.file_field :zipfile %>
+			</p>
+		</div>
+
+		<div>
+			<p>
+			  <%= f.submit "Upload", :class => "btn btn-success" %>
+			  <%= link_to "Back", root_path, :class => "btn btn-success " %>
+			</p>
+		</div>
+	<% end %>
+	
+</div>
+</section>

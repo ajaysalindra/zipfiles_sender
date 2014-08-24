@@ -1,0 +1,2 @@
+module CyborgsHelper
+end

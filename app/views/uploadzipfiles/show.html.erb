@@ -1,0 +1,36 @@
+<section class="container continer-responsive">
+	<div class="panel panel-default">
+			<div class="panel-heading">
+				<h1><%= @uploadzipfile.name  %></h1>
+			</div><br>
+			<%= form_for @uploadzipfile, url: {action: :sendpayslips}, method: :post do |f| %> 
+				<div class="panel">
+					 <div class="panel panel-body">
+					 	<fieldset>
+					    <table>
+					     	<% @uploadzipfile.listfiles.each_with_index do |file, index| %>
+					     		<tr>
+					     			<td>
+					     				<%= file %>
+					     				<%= hidden_field_tag "mail[#{index}][file]", file %>
+					     			</td>
+										<td>
+										<%= select_tag "mail[#{index}][employee]",  options_from_collection_for_select(@cyborgs, "id", "name", @cyborgs.first.id),  prompt: "select employee" %>      
+									    </td>
+									   </tr>
+					     	  <% end %>
+					     </table>
+					     </fieldset>
+				     </div>	
+				     <div>
+				     	<%= submit_tag "Submit", :class => "btn btn-success normal" %>
+				     	<%= link_to "Back", root_path, :class => "btn btn-success normal" %>
+				     </div>
+				     
+				</div>
+			<% end %>
+
+	</div>
+    
+</section>
+
