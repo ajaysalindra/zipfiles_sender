@@ -1,5 +1,16 @@
 <div class="form-horizontal">
 <%= form_for @cyborg do |f| %>
+	
+		<% if @cyborg.errors.any? %>
+		  <div id="error_explanation">
+		    <ul>
+		    <% @cyborg.errors.full_messages.each do |msg| %>
+		      <li><%= msg %></li>
+		    <% end %>
+		    </ul>
+		  </div>
+		<% end %>
+
 		<p>
 			<%= f.label :name, "Name :" %>
 			<%= f.text_field :name %>
