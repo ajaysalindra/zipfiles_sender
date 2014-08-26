@@ -5,9 +5,7 @@
   <meta charset="UTF-8">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application' %>
-  <link href= "stylesheets/bootstrap.min.css" rel= "stylesheets" %>
-  <link href= "stylesheets/bootstrap.css" rel= "stylesheets" %>
-  <link href= "stylesheets/custom.css" rel= "stylesheets" %>
+
   <%= csrf_meta_tags %>
   <%= yield (:head) %>
 </head>
@@ -18,8 +16,7 @@
 	<%= yield %>
 	</div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="javascripts/bootstrap.min.js"></script>
+
 </body>
 </html>
 
