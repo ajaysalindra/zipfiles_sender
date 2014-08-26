@@ -2244,7 +2244,7 @@ fieldset[disabled] .btn-success.active {
 }
 
 .btn-info {
-  color: #3C210C;
+  color: #ffffff; 
   background-color: #5bc0de;
   border-color: #46b8da;
 }
