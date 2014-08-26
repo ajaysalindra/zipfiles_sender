@@ -1,4 +1,4 @@
-<div class="form-horizontal">
+<div class="jumbotron">
 <%= form_for @cyborg do |f| %>
 	
 		<% if @cyborg.errors.any? %>
@@ -23,6 +23,9 @@
 
 		<p>
 			<%= f.submit "Create" %>
+		</p>
+		<p>
+			<%= link_to "Back", cyborgs_path %>
 		</p>
 <% end %>
 </div>

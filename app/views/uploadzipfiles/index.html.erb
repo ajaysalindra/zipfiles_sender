@@ -4,9 +4,9 @@
 			<div class="panel-heading">
 				<h1>Zip File Upload</h1>
 				<div align="right"><%= link_to "Add Cyborgs", cyborgs_path, :class => "btn  btn-warning" %></div>
-			</div><br>
+			</div>
 			<div class="panel">
-				    <table class="table">
+				    <table class="table table-default">
 						<% @uploadzipfiles.each do |uploadzipfile| %>
 							<tr>
 							<td class="panel-hover"><a href="<%= uploadzipfile_path(uploadzipfile) %>"><%= uploadzipfile.zipfile_identifier.to_s %></a>
