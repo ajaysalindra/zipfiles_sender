@@ -12,10 +12,9 @@
 
 		<p>
 			<%= f.submit "Create", :class => "btn-s btn-xs-s" %>
-		</p>
-		<p>
 			<%= link_to "Back", cyborgs_path, :class => "btn-s btn-xs-s" %>
 		</p>
+		
 		<% if @cyborg.errors.any? %>
 			  <div id="error_explanation" class= "alert-warning">
 			    <p>
