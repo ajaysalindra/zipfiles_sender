@@ -1,20 +1,20 @@
 <section class="container">
-	<div class= "panel-primary">
+	<div class= "panel-clr-new">
 	<div class="panel-heading" align="center">
 		<h1 class="text-default">List of Cyborgs</h1>
 	</div>
 	<div class="jumbotron-new">
 	<table class="table">
 		<tr>
-			<th class="text-success">Name</th><br>
+			<th class="text-success">Name</th>
 			<th class="text-success">Email</th>
 		</tr>
 		<% @cyborgs.each do |cyborg| %>
-		<tr>
+		<tr class="text-clr-new">
 			<td><%= cyborg.name %></td>
 			<td><%= cyborg.email %></td>
-			<td><%= link_to 'Edit', edit_cyborg_path(cyborg) %></td>
-			<td><%= link_to 'Delete', cyborg_path(cyborg), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			<td><%= link_to 'Edit', edit_cyborg_path(cyborg), :class => "text-primary" %></td>
+			<td><%= link_to 'Delete', cyborg_path(cyborg),:class => "text-primary", method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		</tr>
 		
 		<% end %>

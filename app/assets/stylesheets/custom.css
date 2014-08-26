@@ -36,3 +36,16 @@
   color: inherit;
   background-color: #DCDEEE;
 }
+
+.text-clr-new
+{
+  color: #7A4F21;
+}
+
+.panel-clr-new
+{
+
+  color: #442169;
+  background-color: #34B4B4;
+  border-color: #428bca;
+}

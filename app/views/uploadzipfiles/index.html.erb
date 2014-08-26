@@ -1,5 +1,5 @@
 <section class="container continer-responsive">
-		<div class="panel-primary">
+		<div class="panel-clr-new">
 			<div class="panel-heading">
 				<h1 align="center">Zip File Upload</h1>
 				<div align="right"><%= link_to "Add Cyborgs", cyborgs_path, :class => "btn-s btn-xs-s" %></div>
@@ -8,7 +8,7 @@
 				    <table class="table">
 						<% @uploadzipfiles.each do |uploadzipfile| %>
 							<tr>
-							<td class="panel-hover"><a href="<%= uploadzipfile_path(uploadzipfile) %>"><%= uploadzipfile.zipfile_identifier.to_s %></a>
+							<td><a class="text-clr-new" href="<%= uploadzipfile_path(uploadzipfile) %>"><%= uploadzipfile.zipfile_identifier.to_s %></a>
 							</td>
 							<td><%= link_to 'Delete', uploadzipfile_path(uploadzipfile), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 							</tr>
