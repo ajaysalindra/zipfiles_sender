@@ -2,6 +2,9 @@ class Uploadzipfile < ActiveRecord::Base
 	attr_accessible :name, :zipfile
 	mount_uploader :zipfile, ZipfileUploader
 
+  validates :name, presence:  true, uniqueness: true, length: { maximum: 20 }
+  validates :zipfile, presence: true
+
   def listfiles
   	files = []
     Zip::File.open(zipfile.current_path) do |zip_file|

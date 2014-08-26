@@ -1,31 +1,30 @@
-<div class="jumbotron">
+<div class="container jumbotron">
 <%= form_for @cyborg do |f| %>
-	
-		<% if @cyborg.errors.any? %>
-		  <div id="error_explanation">
-		    <ul>
-		    <% @cyborg.errors.full_messages.each do |msg| %>
-		      <li><%= msg %></li>
-		    <% end %>
-		    </ul>
-		  </div>
-		<% end %>
-
-		<p>
-			<%= f.label :name, "Name :" %>
+	  <p>
+			<%= f.label :name, "Name :", :class => "text-info" %>
 			<%= f.text_field :name %>
 		</p>
 
 		<p>
-			<%= f.label :email, "Email :" %>
+			<%= f.label :email, "Email :", :class => "text-info" %>
 			<%= f.text_field :email %>
 		</p>
 
 		<p>
-			<%= f.submit "Create" %>
+			<%= f.submit "Create", :class => "btn-s btn-xs-s" %>
 		</p>
 		<p>
-			<%= link_to "Back", cyborgs_path %>
+			<%= link_to "Back", cyborgs_path, :class => "btn-s btn-xs-s" %>
 		</p>
+		<% if @cyborg.errors.any? %>
+			  <div id="error_explanation" class= "alert-warning">
+			    <p>
+			    <% @cyborg.errors.full_messages.each do |msg| %>
+			      <p><%= msg %></p>
+			    <% end %>
+			    </p>
+			  </div>
+		<% end %>
+
 <% end %>
 </div>
