@@ -1,30 +1,40 @@
 <section class="container continer-responsive">
-<div class="form-horizontal" >
+<div class="panel-clr-new">
 	<div class="panel-heading">
-      <h1>Upload Zip</h1>
+      <h1 align="center">Upload Zip</h1>
     </div>
+    <div class="jumbotron">
 	<%= form_for @uploadzipfile, :html => {:multipart => true} do |f| %>
 		<div>
 			<p>
-			  <%= f.label :name, "Name : " %>
+			  <%= f.label :name, "Name : ", :class => "text-success" %>
 			  <%= f.text_field :name %>
 			</p>
 		</div>
 		
 		<div>
 			<p>
-				<%= f.label :zipfile, "Zip File : " %>
 				<%= f.file_field :zipfile %>
 			</p>
 		</div>
 
 		<div>
 			<p>
-			  <%= f.submit "Upload", :class => "btn btn-success" %>
-			  <%= link_to "Back", root_path, :class => "btn btn-success " %>
+			  <%= f.submit "Upload", :class => "btn btn-warning" %>
+			  <%= link_to "Back", root_path, :class => "btn btn-warning " %>
 			</p>
 		</div>
+		
 	<% end %>
-	
+	<% if @uploadzipfile.errors.any? %>
+			  <div id="error_explanation" class= "alert-danger">
+			    <p>
+			    <% @uploadzipfile.errors.full_messages.each do |msg| %>
+			      <p><%= msg %></p>
+			    <% end %>
+			    </p>
+			  </div>
+		<% end %>
+	</div>
 </div>
 </section>
