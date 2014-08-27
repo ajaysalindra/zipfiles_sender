@@ -1,15 +1,26 @@
 <div class="container" align="center">
-	<table class="table">
-		<div class= "table-header"><h2>Show Cyborg</h2></div>
+ <div class="panel-clr-new">
+	<div class= "panel-heading"><h2>Show Cyborg</h2></div>
+	<table class="table jumbotron-new">
 	<tr>
 		<th>Name:</th>
 		<th>Email:</th>
 	</tr>
 	<tr>
-		<td><%= @cyborg.name %></td>
-		<td><%= @cyborg.email %></td>
+		<td class="text-success"><%= @cyborg.name %></td>
+		<td class="text-success"><%= @cyborg.email %></td>
+		
 	</tr>
-	
+	<tr>
+		<td align= "center"><%= link_to "Back", cyborgs_path, :class => "btn btn-success" %></td>
+	</tr>
+	<tr>
+		<% flash.each do |name, msg| %>
+		  <td><%= content_tag :div, msg, :id => "flash_#{name}", :class => "alert-danger" %></td>
+		<% end %>
+	</tr>
 	</table>
-	<div><%= link_to "Back", cyborgs_path, :class => "btn btn-success" %></div>
+	
+	
+ </div>
 </div>

@@ -1,17 +1,29 @@
-<div class="form-horizontal">
+<div class="container jumbotron">
 <%= form_for @cyborg do |f| %>
-		<p>
-			<%= f.label :name, "Name :" %>
+	  <p>
+			<%= f.label :name, "Name :", :class => "text-info" %>
 			<%= f.text_field :name %>
 		</p>
 
 		<p>
-			<%= f.label :email, "Email :" %>
+			<%= f.label :email, "Email :", :class => "text-info" %>
 			<%= f.text_field :email %>
 		</p>
 
 		<p>
-			<%= f.submit "Create" %>
+			<%= f.submit class: "btn-s btn-xs-s" %>
+			<%= link_to "Back", cyborgs_path, :class => "btn-s btn-xs-s" %>
 		</p>
+		
+		<% if @cyborg.errors.any? %>
+			  <div id="error_explanation" class= "alert-warning">
+			    <p>
+			    <% @cyborg.errors.full_messages.each do |msg| %>
+			      <p><%= msg %></p>
+			    <% end %>
+			    </p>
+			  </div>
+		<% end %>
+
 <% end %>
 </div>

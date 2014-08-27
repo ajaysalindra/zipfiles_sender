@@ -37,5 +37,10 @@ class UploadzipfilesController < ApplicationController
 		redirect_to root_path, notice: "Successfully sent email"
 	end
 
+	def destroy
+		@uploadzipfile = Uploadzipfile.find(params[:id])
+		@uploadzipfile.destroy
+		redirect_to root_path
+	end
 
 end
