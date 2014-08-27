@@ -11,7 +11,7 @@ end
 
 
 group :development do
-gem 'mysql2'
+    gem 'mysql2'
 end
 
 # Use SCSS for stylesheets
