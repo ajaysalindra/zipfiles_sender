@@ -16,6 +16,11 @@
 					</table>
 			
 			<div><%= link_to "Upload Zip", new_uploadzipfile_path, :class => "btn-s btn-xs-s" %></div>
+			<div>
+				<% flash.each do |name, msg| %>
+					<%= content_tag :div, msg, :id => "flash_#{name}", :class => "alert-danger" %>
+				<% end %>
+			</div>
 			</div>
 		</div>
       
