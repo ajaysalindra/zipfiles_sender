@@ -14,7 +14,7 @@
 						     				<%= hidden_field_tag "mail[#{index}][file]", file %>
 						     			</td>
 										  <td>
-												<%= select_tag "mail[#{index}][employee]",  options_from_collection_for_select(@cyborgs, "id", "name", @cyborgs.first.id),  prompt: "select employee", :class => "text-danger" %>      
+												<%= select_tag "mail[#{index}][employee]",  options_from_collection_for_select(@cyborgs, "id", "name"),  prompt: "select employee", :class => "text-danger" %>      
 										  </td>
 									</tr>
 								<% end %>
